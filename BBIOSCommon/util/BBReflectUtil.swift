@@ -39,7 +39,7 @@ public class BBReflectUtil{
     
     public class func getClassName<T>(x: T) -> String{
         let mir = getMirror(x)
-        return mir.description
+        return String(mir.subjectType)
     }
     
     /**

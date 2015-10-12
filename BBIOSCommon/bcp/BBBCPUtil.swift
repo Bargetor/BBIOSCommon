@@ -114,8 +114,6 @@ public class BBBCPUtil {
         return BBBCPUtil()
     }()
     
-    let logger = XCGLogger.defaultInstance()
-    
     /**
     * 如果设置了server, 调用的url 将会被视为 path, 最后请求地址是 server + path
     **/
@@ -164,10 +162,10 @@ public class BBBCPUtil {
         let requestBody = self.buildBCPRequestBody()
         requestBody.params = baseParams
         let requestBodyString = Mapper().toJSONString(requestBody, prettyPrint: true)
-        self.logger.info("request path: \(urlPath) and base bcp params request body is :\(requestBodyString)")
+        BBLoggerUtil.info("request path: \(urlPath) || and base bcp params request body is :\(requestBodyString)")
         
         self.baseRequest(urlPath, params: nil, requestBody: requestBodyString, success: {(response: Response) in
-            self.logger.info("base bcp response body is :\(NSString(data: response.data, encoding: NSUTF8StringEncoding))")
+            BBLoggerUtil.info("base bcp response body is :\(NSString(data: response.data, encoding: NSUTF8StringEncoding))")
             
             if let d: NSData = response.data {
                 var json = JSON(data: d)
@@ -191,7 +189,7 @@ public class BBBCPUtil {
                 success(response: response)
             }, failure: nil)
         }catch let error{
-            self.logger.error("bcp request error:\(error)")
+            BBLoggerUtil.error("bcp request error:\(error)")
         }
         
     }
@@ -200,9 +198,6 @@ public class BBBCPUtil {
     * 创建签名请求参数
     **/
     private func buildSigParams(requestBody: String?) throws -> Dictionary<String, String>{
-        if self.token.isEmpty {
-            throw BCPSystemError.NoToken
-        }
         var params = self.getBaseRequestUrlParams()
         if requestBody != nil{
             params["params"] = requestBody
@@ -210,7 +205,6 @@ public class BBBCPUtil {
         
         let sig = self.genSig(params, token: self.token)
         params["sig"] = sig
-        print(sig)
         
         params.removeValueForKey("params")
         
@@ -220,14 +214,12 @@ public class BBBCPUtil {
     private func genSig(params: Dictionary<String, String>, token: String) -> String{
         let concatParamsString = self.sortAndConcatParams(params)
         let genSigString = "\(concatParamsString)\(token)"
-        print(genSigString)
         return genSigString.MD5String()
     }
     
     private func sortAndConcatParams(params: Dictionary<String, String>) -> String{
         let sortResult = params.sort { (element1, element2) -> Bool in
             let result = element1.0.compare(element2.0)
-            print("\(element1.0) : \(element2.0) = \(result.rawValue)")
             return result.rawValue <= 0
         }
         

@@ -18,6 +18,7 @@
 		2B691B9B1B11BF8800098916 /* BBBCPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B691B9A1B11BF8800098916 /* BBBCPUtil.swift */; };
 		2B691B9D1B11C23100098916 /* BBReflectUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B691B9C1B11C23100098916 /* BBReflectUtil.swift */; };
 		2B691B9F1B11C46700098916 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B691B9E1B11C46700098916 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2B8E5B2A1BCAAA9100F83FFB /* BBLoggerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E5B291BCAAA9100F83FFB /* BBLoggerUtil.swift */; settings = {ASSET_TAGS = (); }; };
 		2B95F3281B64EB300069FB14 /* BBSegueUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95F3271B64EB300069FB14 /* BBSegueUtil.swift */; };
 		2BED1B631B6FB6E600318AD1 /* BBArrayUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BED1B621B6FB6E600318AD1 /* BBArrayUtil.swift */; };
 		2BF088361BC8215B00633491 /* BBMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF088351BC8215B00633491 /* BBMD5.swift */; settings = {ASSET_TAGS = (); }; };
@@ -54,6 +55,7 @@
 		2B691B9A1B11BF8800098916 /* BBBCPUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBBCPUtil.swift; sourceTree = "<group>"; };
 		2B691B9C1B11C23100098916 /* BBReflectUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBReflectUtil.swift; sourceTree = "<group>"; };
 		2B691B9E1B11C46700098916 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "/Users/Bargetor/Documents/Bargetor/workspace/IOS/Migrant/Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<absolute>"; };
+		2B8E5B291BCAAA9100F83FFB /* BBLoggerUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBLoggerUtil.swift; sourceTree = "<group>"; };
 		2B95F3271B64EB300069FB14 /* BBSegueUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBSegueUtil.swift; sourceTree = "<group>"; };
 		2BED1B621B6FB6E600318AD1 /* BBArrayUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBArrayUtil.swift; sourceTree = "<group>"; };
 		2BF088351BC8215B00633491 /* BBMD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBMD5.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				2BED1B621B6FB6E600318AD1 /* BBArrayUtil.swift */,
 				2B5D9FA61B7100B9000934B1 /* BBApplicationUtil.swift */,
 				2BF088351BC8215B00633491 /* BBMD5.swift */,
+				2B8E5B291BCAAA9100F83FFB /* BBLoggerUtil.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				2B0CE3301B1B585C00D44169 /* BBStringUtil.swift in Sources */,
 				2B0CE32E1B1B3A2200D44169 /* BBRegexHelper.swift in Sources */,
 				2B95F3281B64EB300069FB14 /* BBSegueUtil.swift in Sources */,
+				2B8E5B2A1BCAAA9100F83FFB /* BBLoggerUtil.swift in Sources */,
 				2BED1B631B6FB6E600318AD1 /* BBArrayUtil.swift in Sources */,
 				2BF088361BC8215B00633491 /* BBMD5.swift in Sources */,
 				2B63EF951B10958D00CB6F4A /* BBHTTPHelper.swift in Sources */,
