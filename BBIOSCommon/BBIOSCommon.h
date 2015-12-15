@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double BBIOSCommonVersionNumber;
 FOUNDATION_EXPORT const unsigned char BBIOSCommonVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <BBIOSCommon/PublicHeader.h>
-
-
