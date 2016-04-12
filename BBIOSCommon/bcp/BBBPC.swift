@@ -1,5 +1,5 @@
 //
-//  BBBCPUtil.swift
+//  BBBPCUtil.swift
 //  BBIOSCommon
 //
 //  Created by Bargetor on 15/5/24.
@@ -11,11 +11,14 @@ import SwiftyJSON
 import ObjectMapper
 import XCGLogger
 
-public class BCPRequest: Mappable {
-    var bcp: String?
+public class BPCRequest: Mappable {
+    var bpc: String?
     var id: String?
+    var userid: Int?
+    var method: String?
+    var api: String?
     //这里不定义成Mappable，是因为编译不通过
-    var params: BCPBaseParams?
+    var params: BPCBaseParams?
     
     public init(){
         
@@ -27,13 +30,16 @@ public class BCPRequest: Mappable {
     
     // Mappable
     public func mapping(map: Map) {
-        bcp    <- map["bcp"]
+        bpc    <- map["bpc"]
         id     <- map["id"]
+        method <- map["method"]
+        userid <- map["userid"]
+        api    <- map["api"]
         params <- map["params"]
     }
 }
 
-public class BCPBaseParams: Mappable{
+public class BPCBaseParams: Mappable{
     public init(){
         
     }
@@ -47,11 +53,11 @@ public class BCPBaseParams: Mappable{
     }
 }
 
-public class BCPResponse: Mappable {
-    var bcp: String?
+public class BPCResponse: Mappable {
+    var bpc: String?
     var id: String?
-    var result: BCPBaseResult?
-    var error: BCPError?
+    var result: BPCBaseResult?
+    var error: BPCError?
     
     public init(){
         
@@ -63,14 +69,14 @@ public class BCPResponse: Mappable {
     
     // Mappable
     public func mapping(map: Map) {
-        bcp    <- map["bcp"]
+        bpc    <- map["bpc"]
         id     <- map["id"]
         result <- map["result"]
         error  <- map["error"]
     }
 }
 
-public class BCPBaseResult: Mappable{
+public class BPCBaseResult: Mappable{
     
     public init(){
         
@@ -85,7 +91,7 @@ public class BCPBaseResult: Mappable{
     }
 }
 
-public class BCPError: Mappable {
+public class BPCError: Mappable {
     public var status: Int?
     public var msg: String?
     
@@ -104,14 +110,10 @@ public class BCPError: Mappable {
     }
 }
 
-public enum BCPSystemError: ErrorType{
-    case NoToken
-}
 
-
-public class BBBCPUtil {
-    public static let shareInstance: BBBCPUtil = {
-        return BBBCPUtil()
+public class BBBPCUtil {
+    public static let shareInstance: BBBPCUtil = {
+        return BBBPCUtil()
     }()
     
     /**
@@ -126,56 +128,28 @@ public class BBBCPUtil {
         
     }
     
-//    public func request<T: Mappable>(url: String, params: Dictionary<String, AnyObject>, success: ((result: T?, error: BCPError?) -> Void)){
-//
-//        self.baseRequest(.POST, url: self.buildUrl(url), params: params, paramEncoding: .JSON).response { (request, response, data, error) in
-//            
-//            self.logger.info("dic params request body is :\(NSString(data: request!.HTTPBody!, encoding: NSUTF8StringEncoding))")
-//            
-//            if error != nil{
-//                self.logger.error(error.debugDescription)
-//            }
-//            
-//            
-//            if let d: NSData = data{
-//                var json = JSON(data: d)
-//                
-//                let bcp = json["bcp"].stringValue
-//                let id = json["id"].stringValue
-//                let resultJson = json["result"]
-//                let errorJson = json["error"]
-//                let result = Mapper<T>().map(resultJson.description)
-//                let error = Mapper<BCPError>().map(errorJson.description)
-//                success(result: result, error: error)
-//            }
-//            
-//            
-//        }
-//    }
-    
-    
     /**
-        result的泛型类型必须为BCPBaseResult的子类，不要以为这里定义的是Mappable你就以为是Mappable
+        result的泛型类型必须为BPCBaseResult的子类，不要以为这里定义的是Mappable你就以为是Mappable
     */
-    public func request<T: BCPBaseResult>(urlPath: String, baseParams: BCPBaseParams, success: ((result: T?, error: BCPError?) -> Void)){
+    public func request<T: BPCBaseResult>(urlPath: String, baseParams: BPCBaseParams, success: ((result: T?, error: BPCError?) -> Void)){
         
-        let requestBody = self.buildBCPRequestBody()
+        let requestBody = self.buildBPCRequestBody()
         requestBody.params = baseParams
         let requestBodyString = Mapper().toJSONString(requestBody, prettyPrint: true)
-        BBLoggerUtil.info("request path: \(urlPath) || and base bcp params request body is :\(requestBodyString)")
+        BBLoggerUtil.info("request path: \(urlPath) || and base BPC params request body is :\(requestBodyString)")
         
         self.baseRequest(urlPath, params: nil, requestBody: requestBodyString, success: {(response: Response) in
-            BBLoggerUtil.info("base bcp response body is :\(NSString(data: response.data, encoding: NSUTF8StringEncoding))")
+            BBLoggerUtil.info("base BPC response body is :\(NSString(data: response.data, encoding: NSUTF8StringEncoding))")
             
             if let d: NSData = response.data {
                 var json = JSON(data: d)
                 
-//                let bcp = json["bcp"].stringValue
+//                let BPC = json["BPC"].stringValue
 //                let id = json["id"].stringValue
                 let resultJson = json["result"]
                 let errorJson = json["error"]
                 let result = Mapper<T>().map(resultJson.description)
-                let e = Mapper<BCPError>().map(errorJson.description)
+                let e = Mapper<BPCError>().map(errorJson.description)
                 success(result: result, error: e)
             }
         })
@@ -189,7 +163,7 @@ public class BBBCPUtil {
                 success(response: response)
             }, failure: nil)
         }catch let error{
-            BBLoggerUtil.error("bcp request error:\(error)")
+            BBLoggerUtil.error("BPC request error:\(error)")
         }
         
     }
@@ -237,9 +211,9 @@ public class BBBCPUtil {
         return params
     }
     
-    private func buildBCPRequestBody() -> BCPRequest{
-        let result = BCPRequest()
-        result.bcp = "1.0.0"
+    private func buildBPCRequestBody() -> BPCRequest{
+        let result = BPCRequest()
+        result.bpc = "1.0.0"
         result.id = NSUUID().UUIDString
         return result
     }
@@ -264,25 +238,5 @@ public class BBBCPUtil {
         return header
     }
     
-}
-
-public class BCPDateTransform: DateTransform {
-
-    public override func transformFromJSON(value: AnyObject?) -> NSDate? {
-        if let timeInt = value as? Double {
-            let date = NSDate(timeIntervalSince1970: NSTimeInterval(timeInt / 1000.0))
-            let zone = NSTimeZone.systemTimeZone()
-            let interval = NSTimeInterval(zone.secondsFromGMTForDate(date))
-            return date.dateByAddingTimeInterval(interval)
-        }
-        return nil
-    }
-    
-    public override func transformToJSON(value: NSDate?) -> Double? {
-        if let date = value {
-            return Double(date.timeIntervalSince1970) * 1000.0
-        }
-        return nil
-    }
 }
 

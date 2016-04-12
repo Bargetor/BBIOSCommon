@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		2B0CE32E1B1B3A2200D44169 /* BBRegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CE32D1B1B3A2200D44169 /* BBRegexHelper.swift */; };
 		2B0CE3301B1B585C00D44169 /* BBStringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CE32F1B1B585C00D44169 /* BBStringUtil.swift */; };
+		2B2269AE1CBA1DFE00D13205 /* BBBPCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2269AD1CBA1DFE00D13205 /* BBBPCError.swift */; };
+		2B2269B01CBA295300D13205 /* BBBPCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2269AF1CBA295300D13205 /* BBBPCClient.swift */; };
 		2B55DA521B1094BC009D1214 /* BBIOSCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B55DA511B1094BC009D1214 /* BBIOSCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B55DA581B1094BD009D1214 /* BBIOSCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B55DA4C1B1094BC009D1214 /* BBIOSCommon.framework */; };
 		2B55DA5F1B1094BD009D1214 /* BBIOSCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55DA5E1B1094BD009D1214 /* BBIOSCommonTests.swift */; };
 		2B5D9FA71B7100B9000934B1 /* BBApplicationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D9FA61B7100B9000934B1 /* BBApplicationUtil.swift */; };
 		2B63EF951B10958D00CB6F4A /* BBHTTPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63EF921B10958D00CB6F4A /* BBHTTPHelper.swift */; };
 		2B63EF961B10958D00CB6F4A /* BBJsonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63EF941B10958D00CB6F4A /* BBJsonUtil.swift */; };
-		2B691B9B1B11BF8800098916 /* BBBCPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B691B9A1B11BF8800098916 /* BBBCPUtil.swift */; };
+		2B691B9B1B11BF8800098916 /* BBBPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B691B9A1B11BF8800098916 /* BBBPC.swift */; };
 		2B691B9D1B11C23100098916 /* BBReflectUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B691B9C1B11C23100098916 /* BBReflectUtil.swift */; };
 		2B691B9F1B11C46700098916 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B691B9E1B11C46700098916 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		2B8E5B2A1BCAAA9100F83FFB /* BBLoggerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E5B291BCAAA9100F83FFB /* BBLoggerUtil.swift */; };
@@ -39,6 +41,8 @@
 		005524F7D224E371C8FE292F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2B0CE32D1B1B3A2200D44169 /* BBRegexHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRegexHelper.swift; sourceTree = "<group>"; };
 		2B0CE32F1B1B585C00D44169 /* BBStringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBStringUtil.swift; sourceTree = "<group>"; };
+		2B2269AD1CBA1DFE00D13205 /* BBBPCError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBBPCError.swift; sourceTree = "<group>"; };
+		2B2269AF1CBA295300D13205 /* BBBPCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBBPCClient.swift; sourceTree = "<group>"; };
 		2B55DA4C1B1094BC009D1214 /* BBIOSCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BBIOSCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B55DA501B1094BC009D1214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B55DA511B1094BC009D1214 /* BBIOSCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBIOSCommon.h; sourceTree = "<group>"; };
@@ -53,7 +57,7 @@
 		2B63EF9B1B10978C00CB6F4A /* SwiftHTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHTTP.framework; path = "Pods/../build/Debug-iphoneos/Pods/SwiftHTTP.framework"; sourceTree = "<group>"; };
 		2B63EF9E1B1097BC00CB6F4A /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		2B63EFA01B1097C000CB6F4A /* SwiftHTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHTTP.framework; path = "Pods/../build/Debug-iphoneos/Pods/SwiftHTTP.framework"; sourceTree = "<group>"; };
-		2B691B9A1B11BF8800098916 /* BBBCPUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBBCPUtil.swift; sourceTree = "<group>"; };
+		2B691B9A1B11BF8800098916 /* BBBPC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BBBPC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2B691B9C1B11C23100098916 /* BBReflectUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBReflectUtil.swift; sourceTree = "<group>"; };
 		2B691B9E1B11C46700098916 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "/Users/Bargetor/Documents/Bargetor/workspace/IOS/Migrant/Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<absolute>"; };
 		2B8E5B291BCAAA9100F83FFB /* BBLoggerUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBLoggerUtil.swift; sourceTree = "<group>"; };
@@ -122,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				2B95F3241B64E95B0069FB14 /* segue */,
-				2B691B991B11BF6900098916 /* bcp */,
+				2B691B991B11BF6900098916 /* bpc */,
 				2B63EF911B10958D00CB6F4A /* http */,
 				2B63EF931B10958D00CB6F4A /* util */,
 				2B55DA511B1094BC009D1214 /* BBIOSCommon.h */,
@@ -180,11 +184,14 @@
 			path = util;
 			sourceTree = "<group>";
 		};
-		2B691B991B11BF6900098916 /* bcp */ = {
+		2B691B991B11BF6900098916 /* bpc */ = {
 			isa = PBXGroup;
 			children = (
-				2B691B9A1B11BF8800098916 /* BBBCPUtil.swift */,
+				2B691B9A1B11BF8800098916 /* BBBPC.swift */,
+				2B2269AD1CBA1DFE00D13205 /* BBBPCError.swift */,
+				2B2269AF1CBA295300D13205 /* BBBPCClient.swift */,
 			);
+			name = bpc;
 			path = bcp;
 			sourceTree = "<group>";
 		};
@@ -364,7 +371,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B691B9B1B11BF8800098916 /* BBBCPUtil.swift in Sources */,
+				2B691B9B1B11BF8800098916 /* BBBPC.swift in Sources */,
+				2B2269AE1CBA1DFE00D13205 /* BBBPCError.swift in Sources */,
+				2B2269B01CBA295300D13205 /* BBBPCClient.swift in Sources */,
 				2B691B9D1B11C23100098916 /* BBReflectUtil.swift in Sources */,
 				2B0CE3301B1B585C00D44169 /* BBStringUtil.swift in Sources */,
 				2B0CE32E1B1B3A2200D44169 /* BBRegexHelper.swift in Sources */,
