@@ -17,6 +17,7 @@ public class BPCRequest: Mappable {
     var userid: Int?
     var method: String?
     var api: String?
+    var token: String?
     //这里不定义成Mappable，是因为编译不通过
     var params: BPCBaseParams?
     
@@ -35,6 +36,7 @@ public class BPCRequest: Mappable {
         method <- map["method"]
         userid <- map["userid"]
         api    <- map["api"]
+        token  <- map["token"]
         params <- map["params"]
     }
 }

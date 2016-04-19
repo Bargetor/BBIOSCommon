@@ -125,6 +125,7 @@ public class BBBPCClient{
         result.id = NSUUID().UUIDString
         result.userid = userid
         result.api = "1.0"
+        result.token = token
         return result
     }
     
