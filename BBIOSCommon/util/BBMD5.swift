@@ -7,23 +7,23 @@
 //
 
 import Foundation
-import CommonCrypto
+//import CommonCrypto
 
 extension String{
-    func MD5String() -> String {
-        if let data = self.dataUsingEncoding(NSUTF8StringEncoding)
-        {
-            let result = NSMutableData(length: Int(CC_MD5_DIGEST_LENGTH))
-            let resultBytes = UnsafeMutablePointer<CUnsignedChar>(result!.mutableBytes)
-            CC_MD5(data.bytes, CC_LONG(data.length), resultBytes)
-            let resultEnumerator = UnsafeBufferPointer<CUnsignedChar>(start: resultBytes, count: result!.length)
-            let MD5 = NSMutableString()
-            for c in resultEnumerator {
-                MD5.appendFormat("%02x", c)
-            }
-            return MD5 as String
-        }
-        return ""
-    }
+//    func MD5String() -> String {
+//        if let data = self.dataUsingEncoding(NSUTF8StringEncoding)
+//        {
+//            let result = NSMutableData(length: Int(CC_MD5_DIGEST_LENGTH))
+//            let resultBytes = UnsafeMutablePointer<CUnsignedChar>(result!.mutableBytes)
+//            CC_MD5(data.bytes, CC_LONG(data.length), resultBytes)
+//            let resultEnumerator = UnsafeBufferPointer<CUnsignedChar>(start: resultBytes, count: result!.length)
+//            let MD5 = NSMutableString()
+//            for c in resultEnumerator {
+//                MD5.appendFormat("%02x", c)
+//            }
+//            return MD5 as String
+//        }
+//        return ""
+//    }
     
 }

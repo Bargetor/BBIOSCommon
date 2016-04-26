@@ -37,8 +37,6 @@ public class BBHTTPHelper: NSObject{
                     let requestSerializer = HTTPParameterSerializer()
                     try requestSerializer.serialize(req, parameters: params)
                 }
-                print(req.URL)
-                
                 req.HTTPMethod = method.rawValue
                 if requestBody != nil{
                     let data = requestBody!.dataUsingEncoding(NSUTF8StringEncoding)
@@ -53,18 +51,6 @@ public class BBHTTPHelper: NSObject{
                 }
                 
                 req.timeoutInterval = 10
-                
-//                NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue(), completionHandler:{
-//                    (response, data, error) -> Void in
-//                    
-//                    if error == nil{
-//                        //Handle Error here
-//                    }else{
-//                        //Handle data in NSData type
-//                        print(data)
-//                    }
-//                    
-//                })
                 
                 let opt = HTTP(req)
                 opt.start({(response: Response) in

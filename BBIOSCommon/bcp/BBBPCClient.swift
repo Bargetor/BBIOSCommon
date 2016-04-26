@@ -56,48 +56,13 @@ public class BBBPCClient{
     }
     
     public func baseRequest(urlPath: String, params: Dictionary<String, String>?, requestBody: String? = nil, success: ((response: Response) -> Void)){
-        do{
-            let params = try self.buildSigParams(requestBody)
-            
-            BBHTTPHelper.post(self.buildUrl(urlPath), params: params, headers: self.buildRequestHeader(), requestBody: requestBody, success: {response in
-                success(response: response)
-                }, failure: nil)
-        }catch let error{
-            BBLoggerUtil.error("bpc request error:\(error)")
-        }
-        
+        BBHTTPHelper.post(self.buildUrl(urlPath), params: params, headers: self.buildRequestHeader(), requestBody: requestBody, success: {response in
+            success(response: response)
+        }, failure: nil)
     }
     
     private func buildMethod(method: String){
         
-    }
-    
-    /**
-     * 创建签名请求参数
-     **/
-    private func buildSigParams(requestBody: String?) throws -> Dictionary<String, String>{
-        var params = self.getBaseRequestUrlParams()
-        
-        if (self.token == nil){
-            return params
-        }
-        
-        if requestBody != nil{
-            params["params"] = requestBody
-        }
-        
-        let sig = self.genSig(params, token: self.token!)
-        params["sig"] = sig
-        
-        params.removeValueForKey("params")
-        
-        return params
-    }
-    
-    private func genSig(params: Dictionary<String, String>, token: String) -> String{
-        let concatParamsString = self.sortAndConcatParams(params)
-        let genSigString = "\(concatParamsString)\(token)"
-        return genSigString.MD5String()
     }
     
     private func sortAndConcatParams(params: Dictionary<String, String>) -> String{

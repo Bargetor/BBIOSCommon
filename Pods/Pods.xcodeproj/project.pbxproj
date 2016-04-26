@@ -177,7 +177,7 @@
 			<array/>
 			<key>dependencies</key>
 			<array>
-				<string>F1E954981765AC92A91F851F29EF652A</string>
+				<string>BB7C0CF291B540553FEA1630BE16B752</string>
 			</array>
 			<key>isa</key>
 			<string>PBXNativeTarget</string>
@@ -228,6 +228,19 @@
 			<string>Pods-umbrella.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3C003C6D519F3E272327B3EFB4ACF38A</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>91AD6B9A81A83C8218AB9BFCF7719A22</string>
+			<key>remoteInfo</key>
+			<string>SwiftHTTP</string>
 		</dict>
 		<key>44EF300133982A9D45A0702E7AF675E0</key>
 		<dict>
@@ -919,19 +932,6 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>AA96C5C9B0C5B69E63BFED2B7A53C2E8</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>91AD6B9A81A83C8218AB9BFCF7719A22</string>
-			<key>remoteInfo</key>
-			<string>SwiftHTTP</string>
-		</dict>
 		<key>B47736247ADB8B8D65A55F14FAAA25DD</key>
 		<dict>
 			<key>children</key>
@@ -982,6 +982,17 @@
 			<string>SOURCE_ROOT</string>
 			<key>xcLanguageSpecificationIdentifier</key>
 			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>BB7C0CF291B540553FEA1630BE16B752</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>SwiftHTTP</string>
+			<key>target</key>
+			<string>91AD6B9A81A83C8218AB9BFCF7719A22</string>
+			<key>targetProxy</key>
+			<string>3C003C6D519F3E272327B3EFB4ACF38A</string>
 		</dict>
 		<key>BC3CA7F9E30CC8F7E2DD044DD34432FC</key>
 		<dict>
@@ -1179,17 +1190,6 @@
 			<string>Info.plist</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F1E954981765AC92A91F851F29EF652A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>SwiftHTTP</string>
-			<key>target</key>
-			<string>91AD6B9A81A83C8218AB9BFCF7719A22</string>
-			<key>targetProxy</key>
-			<string>AA96C5C9B0C5B69E63BFED2B7A53C2E8</string>
 		</dict>
 		<key>F8347BCFAD0D581E586C8F39695FDD63</key>
 		<dict>

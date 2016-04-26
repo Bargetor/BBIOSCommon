@@ -190,7 +190,7 @@ public class BBBPCUtil {
     private func genSig(params: Dictionary<String, String>, token: String) -> String{
         let concatParamsString = self.sortAndConcatParams(params)
         let genSigString = "\(concatParamsString)\(token)"
-        return genSigString.MD5String()
+        return genSigString
     }
     
     private func sortAndConcatParams(params: Dictionary<String, String>) -> String{

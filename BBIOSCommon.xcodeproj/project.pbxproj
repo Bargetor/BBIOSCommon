@@ -20,9 +20,11 @@
 		2B691B9B1B11BF8800098916 /* BBBPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B691B9A1B11BF8800098916 /* BBBPC.swift */; };
 		2B691B9D1B11C23100098916 /* BBReflectUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B691B9C1B11C23100098916 /* BBReflectUtil.swift */; };
 		2B691B9F1B11C46700098916 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B691B9E1B11C46700098916 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2B7CCADB1CCF825800BD0A6B /* BBSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCADA1CCF825800BD0A6B /* BBSegue.swift */; };
 		2B8E5B2A1BCAAA9100F83FFB /* BBLoggerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E5B291BCAAA9100F83FFB /* BBLoggerUtil.swift */; };
 		2B9493691C1D61010046565C /* BBIOSCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9493681C1D61010046565C /* BBIOSCommon.swift */; };
 		2B95F3281B64EB300069FB14 /* BBSegueUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95F3271B64EB300069FB14 /* BBSegueUtil.swift */; };
+		2BE746091CCE70A100E7B803 /* BBDateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE746081CCE70A100E7B803 /* BBDateUtil.swift */; };
 		2BED1B631B6FB6E600318AD1 /* BBArrayUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BED1B621B6FB6E600318AD1 /* BBArrayUtil.swift */; };
 		2BF088361BC8215B00633491 /* BBMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF088351BC8215B00633491 /* BBMD5.swift */; };
 /* End PBXBuildFile section */
@@ -60,9 +62,11 @@
 		2B691B9A1B11BF8800098916 /* BBBPC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BBBPC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2B691B9C1B11C23100098916 /* BBReflectUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBReflectUtil.swift; sourceTree = "<group>"; };
 		2B691B9E1B11C46700098916 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "/Users/Bargetor/Documents/Bargetor/workspace/IOS/Migrant/Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<absolute>"; };
+		2B7CCADA1CCF825800BD0A6B /* BBSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBSegue.swift; sourceTree = "<group>"; };
 		2B8E5B291BCAAA9100F83FFB /* BBLoggerUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBLoggerUtil.swift; sourceTree = "<group>"; };
 		2B9493681C1D61010046565C /* BBIOSCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBIOSCommon.swift; sourceTree = "<group>"; };
 		2B95F3271B64EB300069FB14 /* BBSegueUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBSegueUtil.swift; sourceTree = "<group>"; };
+		2BE746081CCE70A100E7B803 /* BBDateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBDateUtil.swift; sourceTree = "<group>"; };
 		2BED1B621B6FB6E600318AD1 /* BBArrayUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBArrayUtil.swift; sourceTree = "<group>"; };
 		2BF088351BC8215B00633491 /* BBMD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBMD5.swift; sourceTree = "<group>"; };
 		2BF088391BC822D100633491 /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcommonCrypto.tbd; path = usr/lib/system/libcommonCrypto.tbd; sourceTree = SDKROOT; };
@@ -180,6 +184,7 @@
 				2B5D9FA61B7100B9000934B1 /* BBApplicationUtil.swift */,
 				2BF088351BC8215B00633491 /* BBMD5.swift */,
 				2B8E5B291BCAAA9100F83FFB /* BBLoggerUtil.swift */,
+				2BE746081CCE70A100E7B803 /* BBDateUtil.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				2B95F3271B64EB300069FB14 /* BBSegueUtil.swift */,
+				2B7CCADA1CCF825800BD0A6B /* BBSegue.swift */,
 			);
 			path = segue;
 			sourceTree = "<group>";
@@ -375,6 +381,8 @@
 				2B2269AE1CBA1DFE00D13205 /* BBBPCError.swift in Sources */,
 				2B2269B01CBA295300D13205 /* BBBPCClient.swift in Sources */,
 				2B691B9D1B11C23100098916 /* BBReflectUtil.swift in Sources */,
+				2BE746091CCE70A100E7B803 /* BBDateUtil.swift in Sources */,
+				2B7CCADB1CCF825800BD0A6B /* BBSegue.swift in Sources */,
 				2B0CE3301B1B585C00D44169 /* BBStringUtil.swift in Sources */,
 				2B0CE32E1B1B3A2200D44169 /* BBRegexHelper.swift in Sources */,
 				2B95F3281B64EB300069FB14 /* BBSegueUtil.swift in Sources */,
@@ -444,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -486,7 +494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -520,7 +528,6 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = CommonCrypto;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -549,7 +556,6 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = CommonCrypto;
 			};
 			name = Release;
 		};
