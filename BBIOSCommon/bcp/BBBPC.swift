@@ -18,8 +18,7 @@ public class BPCRequest: Mappable {
     var method: String?
     var api: String?
     var token: String?
-    //这里不定义成Mappable，是因为编译不通过
-    var params: BPCBaseParams?
+    var params: BPCParams?
     
     public init(){
         
@@ -41,7 +40,7 @@ public class BPCRequest: Mappable {
     }
 }
 
-public class BPCBaseParams: Mappable{
+public class BPCParams: Mappable{
     public init(){
         
     }
@@ -58,7 +57,7 @@ public class BPCBaseParams: Mappable{
 public class BPCResponse: Mappable {
     var bpc: String?
     var id: String?
-    var result: BPCBaseResult?
+    var result: Mappable?
     var error: BPCError?
     
     public init(){
@@ -133,7 +132,7 @@ public class BBBPCUtil {
     /**
         result的泛型类型必须为BPCBaseResult的子类，不要以为这里定义的是Mappable你就以为是Mappable
     */
-    public func request<T: BPCBaseResult>(urlPath: String, baseParams: BPCBaseParams, success: ((result: T?, error: BPCError?) -> Void)){
+    public func request<T: Mappable>(urlPath: String, baseParams: BPCParams, success: ((result: T?, error: BPCError?) -> Void)){
         
         let requestBody = self.buildBPCRequestBody()
         requestBody.params = baseParams
