@@ -55,7 +55,7 @@ public class BBBPCClient{
         let requestBody = self.buildBPCRequestBody()
         requestBody.method = method
         requestBody.params = params
-        let requestBodyString = Mapper().toJSONString(requestBody, prettyPrint: true)
+        let requestBodyString = Mapper().toJSONString(requestBody, prettyPrint: false)
         BBLoggerUtil.info("request method: \(method) -> params request body is :\(requestBodyString)")
         
         self.baseRequest(urlPath!, params: nil, requestBody: requestBodyString, success: {(response: Response) in
