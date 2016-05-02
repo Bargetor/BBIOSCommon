@@ -20,6 +20,14 @@ extension UIViewController{
             objc_setAssociatedObject(self, &lastSegueParam, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
         }
     }
+    
+    public func pushTo(to: UIViewController, params: AnyObject? = nil){
+        BBSegueUtil.pushTo(self, to: to, params: params)
+    }
+    
+    public func pop(){
+        BBSegueUtil.pop(self)
+    }
 }
 
 extension UIView{
@@ -30,4 +38,14 @@ extension UIView{
         }
         BBSegueUtil.mainStoryboardTo(vc, viewControllerName: viewControllerName, param: param)
     }
+    
+    public func pushTo(to: UIViewController, params: AnyObject? = nil){
+        guard let vc = BBSegueUtil.getCurrentViewController() else{
+            return
+        }
+        
+        BBSegueUtil.pushTo(vc, to: to, params: params)
+    }
+    
+    
 }

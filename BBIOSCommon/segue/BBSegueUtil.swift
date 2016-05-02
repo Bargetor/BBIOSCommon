@@ -45,8 +45,15 @@ public class BBSegueUtil {
         
     }
     
-    public class func pushTo(from: UIViewController, to: UIViewController, animated: Bool = true){
-        from.navigationController?.pushViewController(to, animated: animated)
+    public class func pushTo(from: UIViewController, to: UIViewController, params: AnyObject? = nil, animated: Bool = true){
+        to.segueParam = params
+        if from.isKindOfClass(UINavigationController){
+            let from = from as! UINavigationController
+            from.pushViewController(to, animated: animated)
+        }else{
+            from.navigationController?.pushViewController(to, animated: animated)
+        }
+        
     }
     
     public class func pushToMain(from: UIViewController, viewControllerName: String, animated: Bool = true){
@@ -73,5 +80,14 @@ public class BBSegueUtil {
         vc.segueParam = param
         
         from.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    public class func pop(from: UIViewController, animated: Bool = true){
+        if from.isKindOfClass(UINavigationController){
+            let from = from as! UINavigationController
+            from.popViewControllerAnimated(animated)
+        }else{
+            from.navigationController?.popViewControllerAnimated(animated)
+        }
     }
 }
