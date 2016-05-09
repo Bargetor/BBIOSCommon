@@ -22,7 +22,8 @@ extension UIViewController{
     }
     
     public func pushTo(to: UIViewController, params: AnyObject? = nil){
-        BBSegueUtil.pushTo(self, to: to, params: params)
+        to.segueParam = params
+        BBSegueUtil.pushTo(self, to: to)
     }
     
     public func pop(){
@@ -44,8 +45,15 @@ extension UIView{
             return
         }
         
-        BBSegueUtil.pushTo(vc, to: to, params: params)
+        to.segueParam = params
+        BBSegueUtil.pushTo(vc, to: to)
     }
     
+    public func pop(){
+        guard let vc = BBSegueUtil.getCurrentViewController() else{
+            return
+        }
+        BBSegueUtil.pop(vc)
+    }
     
 }

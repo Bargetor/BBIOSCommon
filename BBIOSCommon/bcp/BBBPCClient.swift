@@ -237,35 +237,6 @@ public class BBBPCRequester<T: BBBPCMethodProtocol>{
 }
 
 
-
-//public class BBBPCCallBack<T: Mappable>{
-//    public var method: BBBPCMethod<T>
-//    public var params: BPCBaseParams
-//    public var beforeRequest: (() -> Void)?
-//    public var afterRequest: ((result: T?, error: BPCError?) -> Void)?
-//    public var afterCallBack: (() -> Void)?
-//    
-//    public init(method: BBBPCMethod<T>, params: BPCBaseParams){
-//        self.method = method
-//        self.params = params
-//    }
-//    
-//    public final func callback(block: (result: T?, error: BPCError?) -> Void) -> Void{
-//        if (self.beforeRequest != nil) {
-//            beforeRequest!()
-//        }
-//        
-//        self.method.client.request(self.method.method, params: self.params, success: {(result: T?, error: BPCError?) -> Void in
-//            if (self.afterRequest != nil){
-//                self.afterRequest!(result: result, error: error)
-//            }
-//        
-//            block(result: result, error: error)
-//        })
-//    }
-//}
-
-
 public class BPCDateTransform: DateTransform {
     
     public override func transformFromJSON(value: AnyObject?) -> NSDate? {

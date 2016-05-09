@@ -45,8 +45,7 @@ public class BBSegueUtil {
         
     }
     
-    public class func pushTo(from: UIViewController, to: UIViewController, params: AnyObject? = nil, animated: Bool = true){
-        to.segueParam = params
+    public class func pushTo(from: UIViewController, to: UIViewController, animated: Bool = true){
         if from.isKindOfClass(UINavigationController){
             let from = from as! UINavigationController
             from.pushViewController(to, animated: animated)
