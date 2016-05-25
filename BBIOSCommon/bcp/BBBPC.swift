@@ -14,10 +14,9 @@ import XCGLogger
 public class BPCRequest: Mappable {
     var bpc: String?
     var id: String?
-    var userid: Int?
+    var meta: BPCRequestMeta?
     var method: String?
     var api: String?
-    var token: String?
     var params: BPCParams?
     
     public init(){
@@ -33,10 +32,28 @@ public class BPCRequest: Mappable {
         bpc    <- map["bpc"]
         id     <- map["id"]
         method <- map["method"]
-        userid <- map["userid"]
+        meta   <- map["meta"]
         api    <- map["api"]
-        token  <- map["token"]
         params <- map["params"]
+    }
+}
+
+public class BPCRequestMeta: Mappable{
+    var userid: Int?
+    var token: String?
+    
+    public init(){
+        
+    }
+    
+    required public init?(_ map: Map) {
+        mapping(map)
+    }
+    
+    // Mappable
+    public func mapping(map: Map) {
+        userid <- map["userid"]
+        token  <- map["token"]
     }
 }
 

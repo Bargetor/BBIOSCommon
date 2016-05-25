@@ -92,9 +92,11 @@ public class BBBPCClient{
         let result = BPCRequest()
         result.bpc = "1.0.0"
         result.id = NSUUID().UUIDString
-        result.userid = userid
+        let meta = BPCRequestMeta()
+        meta.userid = userid
+        meta.token = token
+        result.meta = meta
         result.api = "1.0"
-        result.token = token
         return result
     }
     
