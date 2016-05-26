@@ -112,6 +112,7 @@ public class BPCBaseResult: Mappable{
 public class BPCError: Mappable {
     public var status: Int?
     public var msg: String?
+    public var errorName: String?
     
     public init(){
         
@@ -123,8 +124,9 @@ public class BPCError: Mappable {
     
     // Mappable
     public func mapping(map: Map) {
-        status  <- map["status"]
-        msg     <- map["msg"]
+        status     <- map["status"]
+        msg        <- map["msg"]
+        errorName  <- map["errorName"]
     }
 }
 

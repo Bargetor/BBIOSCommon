@@ -23,8 +23,14 @@ public class BBBPCClient{
     public var userid: Int?
     public var token: String?
     
+    private var errorHandlers = Array<BBBPCErrorHandler>()
+    
     public init(){
         
+    }
+    
+    public func addErrorHandler(handler: BBBPCErrorHandler){
+        self.errorHandlers.append(handler)
     }
 
     public func request<T: Mappable>(method: String, params: BPCParams, success: ((result: T?, error: BPCError?) -> Void)?){
@@ -34,6 +40,7 @@ public class BBBPCClient{
             
             if let success = success{
                 success(result: result, error: e)
+                self.processError(e)
             }
             
             
@@ -46,11 +53,12 @@ public class BBBPCClient{
             let e = Mapper<BPCError>().map(errorJson.description)
             if let success = success{
                 success(results: results, error: e)
+                self.processError(e)
             }
         })
     }
     
-    public func baseRequest(method: String, params: BPCParams, success: (resultJson: JSON, errorJson: JSON) -> Void){
+    private func baseRequest(method: String, params: BPCParams, success: (resultJson: JSON, errorJson: JSON) -> Void){
         
         let requestBody = self.buildBPCRequestBody()
         requestBody.method = method
@@ -72,10 +80,21 @@ public class BBBPCClient{
         })
     }
     
-    public func baseRequest(urlPath: String, params: Dictionary<String, String>?, requestBody: String? = nil, success: ((response: Response) -> Void)){
+    private func baseRequest(urlPath: String, params: Dictionary<String, String>?, requestBody: String? = nil, success: ((response: Response) -> Void)){
         BBHTTPHelper.post(self.buildUrl(urlPath), params: params, headers: self.buildRequestHeader(), requestBody: requestBody, success: {response in
             success(response: response)
         }, failure: nil)
+    }
+    
+    
+    private func processError(error: BPCError?){
+        guard let error = error else{
+            return
+        }
+        
+        for handler in self.errorHandlers {
+            handler.handler(error)
+        }
     }
     
     private func buildMethod(method: String){
@@ -116,6 +135,10 @@ public class BBBPCClient{
         return header
     }
     
+}
+
+public protocol BBBPCErrorHandler{
+    func handler(error: BPCError)
 }
 
 public class BBBPCMethodGroup{
