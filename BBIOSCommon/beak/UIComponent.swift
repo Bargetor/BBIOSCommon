@@ -9,12 +9,12 @@
 import Foundation
 import Bond
 
-public protocol UIComponent{
+@objc public protocol UIComponent{
     var subComponent: Array<UIComponent>?{ get set }
     
-    func initUITemplate(withData: AnyObject?)
+    func initUITemplate(withViewModel: UIViewModel?)
     
-    func initLayout(withData: AnyObject?)
+    func layout()
 }
 
 
@@ -34,12 +34,14 @@ extension UIView : UIComponent{
         }
     }
     
-    public func initUITemplate(withData: AnyObject? = nil) {
+    public func initUITemplate(withViewModel: UIViewModel? = nil) {
         
     }
     
-    public func initLayout(withData: AnyObject? = nil) {
-        
+    public func layout() {
+        for subView in self.subviews {
+            subView.layout()
+        }
     }
     
 }

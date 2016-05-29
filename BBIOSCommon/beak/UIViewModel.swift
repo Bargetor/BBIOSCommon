@@ -9,8 +9,8 @@
 import Foundation
 import Bond
 
-public protocol UIViewModel {
+@objc public protocol UIViewModel{
     
-    func bidirectionalBind(component: UIComponent, data: AnyObject?)
+//    func bidirectionalBind(component: UIComponent, data: AnyObject?)
     
 }
