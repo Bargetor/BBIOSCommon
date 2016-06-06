@@ -14,6 +14,8 @@ import Bond
     
     func initUITemplate(withViewModel: UIViewModel?)
     
+    func bindViewModel(viewModel withViewModel: UIViewModel?)
+    
     func layout()
 }
 
@@ -35,6 +37,12 @@ extension UIView : UIComponent{
     }
     
     public func initUITemplate(withViewModel: UIViewModel? = nil) {
+        for subView in self.subviews {
+            subView.initUITemplate(withViewModel)
+        }
+    }
+    
+    public func bindViewModel(viewModel withViewModel: UIViewModel? = nil){
         
     }
     

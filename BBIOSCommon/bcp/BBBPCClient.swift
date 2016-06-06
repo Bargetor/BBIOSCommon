@@ -170,10 +170,17 @@ public class BBBPCMethod<R: Mappable> : BBBPCMethodProtocol{
     public var method: String
     public var client: BBBPCClient
     private var callback: ((result: ResultType?, error: BPCError?) -> Void)?
+    private var otherCompletion: [() -> Void] = []
     
     public init(method: String, client: BBBPCClient){
         self.method = method
         self.client = client
+    }
+    
+    public func addOtherCompletion(completion: (() -> Void)?){
+        if let completion = completion{
+            self.otherCompletion.append(completion)
+        }
     }
     
     public func callback(callback: (result: ResultType?, error: BPCError?) -> Void) {
@@ -189,6 +196,10 @@ public class BBBPCMethod<R: Mappable> : BBBPCMethodProtocol{
                 callback(result: result, error: error)
             }
             self.afterCallBack(result, error: error)
+            
+            for completion in self.otherCompletion{
+                completion()
+            }
         })
     }
 
@@ -213,10 +224,17 @@ public class BBBPCMethodForArray<R: Mappable>: BBBPCMethodProtocol{
     public var method: String
     public var client: BBBPCClient
     private var callback: ((result: ResultType?, error: BPCError?) -> Void)?
+    private var otherCompletion: [() -> Void] = []
     
     public init(method: String, client: BBBPCClient){
         self.method = method
         self.client = client
+    }
+    
+    public func addOtherCompletion(completion: (() -> Void)?){
+        if let completion = completion{
+            self.otherCompletion.append(completion)
+        }
     }
     
     public func callback(callback: (result: ResultType?, error: BPCError?) -> Void) {
@@ -232,6 +250,10 @@ public class BBBPCMethodForArray<R: Mappable>: BBBPCMethodProtocol{
                 callback(result: result, error: error)
             }
             self.afterCallBack(result, error: error)
+            
+            for completion in self.otherCompletion{
+                completion()
+            }
         })
     }
     
