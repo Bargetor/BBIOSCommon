@@ -41,7 +41,11 @@ public class BBSegueUtil {
             vcResult = window.rootViewController
         }
         
-        return vcResult
+        if vcResult!.isKindOfClass(UINavigationController){
+            return vcResult?.childViewControllers.last
+        }else{
+            return vcResult
+        }
         
     }
     
