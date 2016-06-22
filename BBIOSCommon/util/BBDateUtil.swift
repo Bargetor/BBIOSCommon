@@ -10,7 +10,6 @@ import Foundation
 
 public class BBDateUtil{
     public class func getDateString(date: NSDate, formatStr: String) -> String{
-        print(date)
         let format = NSDateFormatter()
         format.dateFormat = formatStr
         return format.stringFromDate(date)
