@@ -17,6 +17,12 @@ import Bond
     func bindViewModel(viewModel withViewModel: UIViewModel?)
     
     func layout()
+    
+    /**
+     该方法的源调用方为 vc 的 viewDidLayoutSubviews, 在布局完成后调用，此时已有完整的frame信息
+     编写代码时应手动的在vc的方法中调用
+     */
+    func viewDidLayout()
 }
 
 
@@ -52,6 +58,11 @@ extension UIView : UIComponent{
         }
     }
     
+    public func viewDidLayout() {
+        for subView in self.subviews {
+            subView.viewDidLayout()
+        }
+    }
 }
 
 
