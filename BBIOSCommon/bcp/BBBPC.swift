@@ -24,7 +24,7 @@ public class BPCRequest: Mappable {
     }
     
     required public init?(_ map: Map) {
-        mapping(map)
+        
     }
     
     // Mappable
@@ -47,7 +47,7 @@ public class BPCRequestMeta: Mappable{
     }
     
     required public init?(_ map: Map) {
-        mapping(map)
+        
     }
     
     // Mappable
@@ -63,7 +63,7 @@ public class BPCParams: Mappable{
     }
     
     required public init?(_ map: Map) {
-        mapping(map)
+        
     }
     
     // Mappable
@@ -82,7 +82,7 @@ public class BPCResponse: Mappable {
     }
     
     required public init?(_ map: Map) {
-        mapping(map)
+        
     }
     
     // Mappable
@@ -101,7 +101,6 @@ public class BPCBaseResult: Mappable{
     }
     
     required public init?(_ map: Map) {
-        mapping(map)
     }
     
     // Mappable
@@ -119,7 +118,6 @@ public class BPCError: Mappable {
     }
     
     required public init?(_ map: Map) {
-        mapping(map)
     }
     
     // Mappable
