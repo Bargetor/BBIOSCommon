@@ -65,6 +65,25 @@ extension UIView : UIComponent{
     }
 }
 
+extension UIViewController{
+    
+    public func initUITemplate(withViewModel: UIViewModel? = nil) {
+        for subView in self.view.subviews {
+            subView.initUITemplate(withViewModel)
+        }
+    }
+    
+    public func bindViewModel(viewModel withViewModel: UIViewModel? = nil){
+        
+    }
+    
+    public func layout() {
+        for subView in self.view.subviews {
+            subView.layout()
+        }
+    }
+}
+
 
 extension UIView : UIComponentLifecycle{
     
