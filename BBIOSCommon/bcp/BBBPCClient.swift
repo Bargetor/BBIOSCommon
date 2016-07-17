@@ -29,6 +29,11 @@ public class BBBPCClient{
         
     }
     
+    public func reset(){
+        self.userid = nil
+        self.token = nil
+    }
+    
     public func addErrorHandler(handler: BBBPCErrorHandler){
         self.errorHandlers.append(handler)
     }
