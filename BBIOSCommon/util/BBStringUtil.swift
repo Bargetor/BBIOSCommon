@@ -22,10 +22,6 @@ extension String {
         return urlEncoded.stringByAddingPercentEncodingWithAllowedCharacters(chartset)!
     }
     
-    public func specialCharsProcess() -> String{
-        return self.stringByReplacingOccurrencesOfString("&nbsp;", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
-    }
-    
     public func length() -> Int{
         return self.characters.count
     }
