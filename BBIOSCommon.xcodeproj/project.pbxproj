@@ -11,6 +11,7 @@
 		2B0CE3301B1B585C00D44169 /* BBStringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CE32F1B1B585C00D44169 /* BBStringUtil.swift */; };
 		2B2269AE1CBA1DFE00D13205 /* BBBPCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2269AD1CBA1DFE00D13205 /* BBBPCError.swift */; };
 		2B2269B01CBA295300D13205 /* BBBPCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2269AF1CBA295300D13205 /* BBBPCClient.swift */; };
+		2B3E7C541D47DB5B00250F34 /* BBUIDeviceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3E7C531D47DB5B00250F34 /* BBUIDeviceUtil.swift */; };
 		2B512DED1CD3555700124B65 /* UIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B512DEC1CD3555700124B65 /* UIComponent.swift */; };
 		2B512DEF1CD3622B00124B65 /* UIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B512DEE1CD3622B00124B65 /* UIViewModel.swift */; };
 		2B512DF11CD365B100124B65 /* Binder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B512DF01CD365B100124B65 /* Binder.swift */; };
@@ -48,6 +49,7 @@
 		2B0CE32F1B1B585C00D44169 /* BBStringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBStringUtil.swift; sourceTree = "<group>"; };
 		2B2269AD1CBA1DFE00D13205 /* BBBPCError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBBPCError.swift; sourceTree = "<group>"; };
 		2B2269AF1CBA295300D13205 /* BBBPCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBBPCClient.swift; sourceTree = "<group>"; };
+		2B3E7C531D47DB5B00250F34 /* BBUIDeviceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBUIDeviceUtil.swift; sourceTree = "<group>"; };
 		2B512DEC1CD3555700124B65 /* UIComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIComponent.swift; sourceTree = "<group>"; };
 		2B512DEE1CD3622B00124B65 /* UIViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewModel.swift; sourceTree = "<group>"; };
 		2B512DF01CD365B100124B65 /* Binder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binder.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				2BF088351BC8215B00633491 /* BBMD5.swift */,
 				2B8E5B291BCAAA9100F83FFB /* BBLoggerUtil.swift */,
 				2BE746081CCE70A100E7B803 /* BBDateUtil.swift */,
+				2B3E7C531D47DB5B00250F34 /* BBUIDeviceUtil.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				2BED1B631B6FB6E600318AD1 /* BBArrayUtil.swift in Sources */,
 				2BF088361BC8215B00633491 /* BBMD5.swift in Sources */,
 				2B9493691C1D61010046565C /* BBIOSCommon.swift in Sources */,
+				2B3E7C541D47DB5B00250F34 /* BBUIDeviceUtil.swift in Sources */,
 				2B63EF951B10958D00CB6F4A /* BBHTTPHelper.swift in Sources */,
 				2B63EF961B10958D00CB6F4A /* BBJsonUtil.swift in Sources */,
 				2B5D9FA71B7100B9000934B1 /* BBApplicationUtil.swift in Sources */,
