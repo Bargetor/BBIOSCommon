@@ -9,9 +9,13 @@
 import Foundation
 
 public class BBDateUtil{
-    public class func getDateString(date: NSDate, formatStr: String) -> String{
+    public class func getDateString(date: NSDate?, formatStr: String) -> String{
+        var d = date
+        if(d == nil){
+            d = NSDate()
+        }
         let format = NSDateFormatter()
         format.dateFormat = formatStr
-        return format.stringFromDate(date)
+        return format.stringFromDate(d!)
     }
 }
